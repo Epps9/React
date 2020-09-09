@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 
 
 const Hero = props => (    
-    <header class={styles.component}>
+    <header className={styles.component}>
       <h2 className={styles.title}>{props.titleText}</h2>
-      <img class={styles.image} src={props.heroIMG}></img>
+      <img className={styles.image} src={props.heroIMG}></img>
     </header>
   );
 
