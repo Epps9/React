@@ -3,12 +3,14 @@ import styles from './Column.scss';
 import PropTypes from 'prop-types';
 import Card from '../Card/Card';
 import Creator from '../Creator/Creator'
+import {settings} from '../../data/dataStore';
+
 
 class Column extends React.Component {
     state = {
         cards: this.props.cards || [],
       }
-
+      
     constructor (props) {
         super (props)
     }
@@ -33,6 +35,7 @@ class Column extends React.Component {
       }
 
     render() {
+      console.log('karty', this.state);
         return (
             <section className={styles.component}>
                 <h3 className={styles.title}> {this.props.title}
@@ -43,11 +46,12 @@ class Column extends React.Component {
                     ))}
                 </div>
                 <div className={styles.creator}>
-                    <Creator action={title => this.addCard(title)}/>
+                    <Creator text={settings.cardCreatorText} action={title => this.addCard(title)}/>
                 </div>
             </section>
         );
     }
 }
+
 
 export default Column;
