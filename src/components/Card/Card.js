@@ -6,16 +6,17 @@ import PropTypes from 'prop-types';
 class Card extends React.Component {
 
       static propTypes = {
-        cards: PropTypes.array,    
+        cards: PropTypes.array, 
+        title: PropTypes.node,   
       }
 
-    render () {
+      render () {
         return (
-            <section className={styles.component}>
-                {this.props.title}
-            </section>
+          <section className={styles.component}>
+            {this.props.title}
+          </section>
         );
-    }
+      }
 }
 
 export default Card;
