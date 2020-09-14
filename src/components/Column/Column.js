@@ -4,11 +4,12 @@ import PropTypes from 'prop-types';
 import Card from '../Card/Card';
 import Creator from '../Creator/Creator'
 import {settings} from '../../data/dataStore';
-
+import Icon from '../Icon/Icon'
 
 class Column extends React.Component {
     state = {
         cards: this.props.cards || [],
+        icon: this.props.icon.name
       }
       
     constructor (props) {
@@ -36,9 +37,15 @@ class Column extends React.Component {
 
     render() {
       console.log('karty', this.state);
+      const { title, cards, addCard, icon } = this.props;
+
         return (
             <section className={styles.component}>
-                <h3 className={styles.title}> {this.props.title}
+                <h3 className={styles.title}> 
+                  <span className={styles.icon}>
+                    <Icon name={icon}/>
+                  </span> 
+                  {this.props.title}
                 </h3>
                 <div>
                     {this.state.cards.map(({key, ...cardProps}) => (
