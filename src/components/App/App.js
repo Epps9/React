@@ -3,7 +3,6 @@ import styles from './App.scss';
 import List from '../List/ListContainer';
 import PropTypes from 'prop-types';
 
-
 class App extends React.Component {
   static propTypes = {
     title: PropTypes.node,
@@ -13,6 +12,7 @@ class App extends React.Component {
 
   render() {
     const {lists, title, subtitle} = this.props;
+
     return (
       <main className={styles.component}>
         <h1 className={styles.title}>{title}</h1>
