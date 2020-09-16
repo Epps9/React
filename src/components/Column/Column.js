@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Column.scss';
 import PropTypes from 'prop-types';
 import Card from '../Card/Card';
-//import Creator from '../Creator/Creator';
+import Creator from '../Creator/Creator';
 import {settings} from '../../data/dataStore';
 import Icon from '../Icon/Icon';
 
@@ -16,6 +16,7 @@ class Column extends React.Component {
       title: PropTypes.node,
       cards: PropTypes.array,
       icon: PropTypes.node,
+      addCard: PropTypes.func,
     }
 
     static defaultProps = {
@@ -24,7 +25,7 @@ class Column extends React.Component {
 
     render() {
       console.log('karty', this.state);
-      const {cards,title, icon} = this.props;
+      const {addCard, cards, title, icon} = this.props;
 
       return (
         <section className={styles.component}>
@@ -39,10 +40,9 @@ class Column extends React.Component {
               <Card key={cardData.id} {...cardData} />
             ))}
           </div>
-          {/*
           <div className={styles.creator}>
-            <Creator text={settings.cardCreatorText} action={title => this.addCard(title)}/>
-            </div> */}
+            <Creator text={settings.cardCreatorText} action={addCard}/>
+          </div> 
         </section>
       );
     }
