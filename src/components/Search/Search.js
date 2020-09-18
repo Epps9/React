@@ -41,6 +41,7 @@ class Search extends React.Component {
 
   render() {
     const {text, countVisible, countAll} = this.props;
+    console.log('countVisible', countVisible);
     const {value} = this.state;
     const {icon} = settings.search;
     return (
