@@ -25,7 +25,7 @@ class List extends React.Component {
 
   render() {
     const {addColumn, columns, title, image, description} = this.props;
-    console.log('pokaż columns', columns);
+    //console.log('pokaż columns', columns);
 
     return (
       <section className={styles.component}>
