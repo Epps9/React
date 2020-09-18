@@ -112,7 +112,7 @@ const cards = [
   {
     id: 'card-1',
     columnId: 'column-1',
-    title: 'This Is Going to Hurt',
+    title: 'This Is Not Going to Hurt',
   },
   {
     id: 'card-2',
