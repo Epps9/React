@@ -4,6 +4,8 @@ import Button from '../Button/Button';
 import PropTypes from 'prop-types';
 import { settings } from '../../data/dataStore';
 import Icon from '../Icon/Icon';
+import Container from '../Container/Container';
+
 
 class Search extends React.Component {
   static propTypes = {
@@ -58,6 +60,7 @@ class Search extends React.Component {
         <div>
           { countVisible == countAll ? '' : `${countVisible} / ${countAll}` }
         </div>
+        <Container />
       </div>
     );
   }
