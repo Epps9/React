@@ -7,6 +7,7 @@ class FAQ extends React.Component {
     return (
       <Container >
         <h2>{dataFAQ.title}</h2>
+        <img src={dataFAQ.image}></img>
         <p>{dataFAQ.content}</p>  
       </Container>   
     );
