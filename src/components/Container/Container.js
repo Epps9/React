@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 const Container = () => (
   <div className={styles.component}>
-    <p></p>
   </div>
 );
 
