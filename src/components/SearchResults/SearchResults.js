@@ -5,6 +5,7 @@ import Card from '../Card/Card';
 import Creator from '../Creator/Creator';
 import {settings} from '../../data/dataStore';
 import Icon from '../Icon/Icon';
+import Container from '../Container/Container';
 
 class SearchResults extends React.Component {
       
@@ -16,7 +17,7 @@ class SearchResults extends React.Component {
       title: PropTypes.node,
       cards: PropTypes.array,
       icon: PropTypes.node,
-      addCard: PropTypes.func,
+      searchText: PropTypes.func,
     }
 
     static defaultProps = {
@@ -24,24 +25,26 @@ class SearchResults extends React.Component {
     }
 
     render() {
-      const {addCard, cards, title, icon} = this.props;
+      const {searchText, cards, title, icon} = this.props;
       return (
-        <section className={styles.component}>
-          <h3 className={styles.title}> 
-            <span className={styles.icon}>
-              <Icon name={icon}/>
-            </span> 
-            {title}
-          </h3>
-          <div>
-            {cards.map(cardData => (
-              <Card key={cardData.id} {...cardData} />
-            ))}
-          </div>
-          <div className={styles.creator}>
-            <Creator text={settings.cardCreatorText} action={addCard}/>
-          </div> 
-        </section>
+        <Container >
+          <section className={styles.component}>
+            <h3 className={styles.title}> 
+              <span className={styles.icon}>
+                <Icon name={icon}/>
+              </span> 
+              {title}
+            </h3>
+            <div>
+              {cards.map(cardData => (
+                <Card key={cardData.id} {...cardData} />
+              ))}
+            </div>
+            <div className={styles.creator}>
+              <Creator action={searchText}/>
+            </div> 
+          </section>
+        </Container>
       );
     }
 }
