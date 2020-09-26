@@ -2,7 +2,6 @@ import React from 'react';
 import styles from '../Column/Column.scss';
 import PropTypes from 'prop-types';
 import Card from '../Card/Card';
-import Creator from '../Creator/Creator';
 import {settings} from '../../data/dataStore';
 import Icon from '../Icon/Icon';
 import Container from '../Container/Container';
@@ -25,7 +24,7 @@ class SearchResults extends React.Component {
     }
 
     render() {
-      const {searchText, cards, title, icon} = this.props;
+      const { cards, title, icon} = this.props;
       return (
         <Container >
           <section className={styles.component}>
@@ -41,7 +40,6 @@ class SearchResults extends React.Component {
               ))}
             </div>
             <div className={styles.creator}>
-              <Creator action={searchText}/>
             </div> 
           </section>
         </Container>
